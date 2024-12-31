@@ -1,0 +1,1537 @@
+/* ------------------------------------------------ GLOBAL ---------------------------------------------------------- */
+
+/* 
+ *  General 
+*/
+
+* {
+    font-family: var(--font-family-roboto);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.intro {
+    font-weight: 400;
+}
+
+.intro2 {
+    color: #f68029;
+}
+
+.txt-inicial {
+    font-weight: 400;
+}
+
+.txt-img-home {
+    margin-top: 35px;
+    text-align: center !important;
+    align-items: center;
+}
+
+html {
+    /* Background color da página */
+    background-color: var(--branco-preto);
+}
+
+main {
+    /* Background color da main */
+    background-color: var(--branco-preto);
+}
+
+main,
+.navbar,
+.offcanvas-body,
+.offcanvas-header,
+footer,
+.form-inputs input,
+.form-inputs textarea,
+.theme-container,
+#cards-section,
+#play-info-section,
+#about-content-section,
+#call-to-action-box,
+#hold-your-event-section,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+ul,
+li {
+    /* Transição de cor */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 
+ * Icons Iconify CSS
+*/
+
+/* WhatsApp Icon */
+.ic--baseline-whatsapp {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23212121' d='M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28'/%3E%3C/svg%3E");
+}
+
+.ic--baseline-whatsapp-white {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28'/%3E%3C/svg%3E");
+}
+
+/* Instagram Icon */
+.mdi--instagram {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23212121' d='M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3'/%3E%3C/svg%3E");
+}
+
+.mdi--instagram-white {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3'/%3E%3C/svg%3E");
+}
+
+/* Arrow Down Icon */
+.ri--arrow-down-s-line {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='m12 13.171l4.95-4.95l1.414 1.415L12 16L5.636 9.636L7.05 8.222z'/%3E%3C/svg%3E");
+}
+
+/* Double Arrow Icon */
+.material-symbols-light--keyboard-double-arrow-right {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M10.537 12L5.942 7.4l.708-.708L11.958 12L6.65 17.308l-.708-.708zm6.1 0l-4.595-4.6l.708-.708L18.058 12l-5.308 5.308l-.708-.708z'/%3E%3C/svg%3E");
+}
+
+/* Ticket Icon */
+.fontisto--ticket {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='m13.817 5.669l4.504 4.501l-8.15 8.15l-4.501-4.504zm-3.006 13.944l8.8-8.8a.894.894 0 0 0 .001-1.28l-5.156-5.156a.926.926 0 0 0-1.28.001l-8.8 8.8a.894.894 0 0 0-.001 1.28l5.156 5.156a.926.926 0 0 0 1.28-.001m12.663-9.073L10.556 23.473c-.332.326-.787.527-1.289.527s-.957-.201-1.289-.527L6.184 21.68a2.74 2.74 0 0 0-3.875-3.874l.001-.001l-1.781-1.794c-.326-.332-.527-.787-.527-1.289s.201-.957.527-1.289L13.448.527C13.78.201 14.235 0 14.737 0s.957.201 1.289.527l1.781 1.781a2.74 2.74 0 1 0 3.874 3.874l.001-.001l1.794 1.781c.326.332.527.787.527 1.289s-.201.957-.527 1.289z'/%3E%3C/svg%3E");
+}
+
+/* Send Message Icon */
+.fluent--send-28-filled {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath fill='%23f2f2f2' d='M3.79 2.625c-.963-.46-2.021.42-1.746 1.451l2.016 7.533a1 1 0 0 0 .824.732l9.884 1.412c.286.04.286.454 0 .495l-9.883 1.411a1 1 0 0 0-.824.732l-2.017 7.537c-.275 1.03.783 1.91 1.746 1.451L25.288 15.13c.949-.452.949-1.804 0-2.257z'/%3E%3C/svg%3E");
+}
+
+/* Arrow Right Icon */
+.tabler--arrow-right {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23f2f2f2' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 12h14m-6 6l6-6m-6-6l6 6'/%3E%3C/svg%3E");
+}
+
+/* Sun Icon */
+.heroicons--sun {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23D5321D' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0a3.75 3.75 0 0 1 7.5 0'/%3E%3C/svg%3E");
+}
+
+/* Moon Icon */
+.ep--moon {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='%23D5321D' d='M240.448 240.448a384 384 0 1 0 559.424 525.696a448 448 0 0 1-542.016-542.08a391 391 0 0 0-17.408 16.384m181.056 362.048a384 384 0 0 0 525.632 16.384A448 448 0 1 1 405.056 76.8a384 384 0 0 0 16.448 525.696'/%3E%3C/svg%3E");
+}
+
+/* Arrow Top Icon */
+.iconamoon--arrow-up-2 {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23F8F9FA' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m17 14l-5-5m0 0l-5 5'/%3E%3C/svg%3E");
+}
+
+/* Icon Effects */
+
+.icon-effect-wobble:hover {
+    /* Ativando a animação no ícone de oscilar de duração de .8s */
+    animation: icon-effect-wobble .8s both;
+}
+
+/* Animação de wobble (oscilar) */
+@keyframes icon-effect-wobble {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        transform-origin: 50% 50%
+    }
+
+    15% {
+        transform: translateX(0px) rotate(-6deg)
+    }
+
+    30% {
+        transform: translateX(0px) rotate(6deg)
+    }
+
+    45% {
+        transform: translateX(0px) rotate(-3.6deg)
+    }
+
+    60% {
+        transform: translateX(0px) rotate(2.4deg)
+    }
+
+    75% {
+        transform: translateX(0px) rotate(-1.2deg)
+    }
+}
+
+/* 
+ *  Global Variables 
+*/
+
+:root {
+    /* Font Roboto */
+    --font-family-roboto: 'Roboto', sans-serif;
+
+    /* Colors */
+    --azul-geral: #033359;
+    --branco: #ffffff;
+    --preto: #0d0d0d;
+    --semibranco: #F8F9FA;
+    --branco-preto: #F8F9FA;
+    --azul-preto: #033359;
+    --azul: #033359;
+    --texto-primario: #212121;
+    --texto-secundario: #757575;
+    --cinza: #999;
+    --divider: #4d4d4d;
+    --marrom-escuro: #033359;
+    --branco-preto-transparente: rgba(242, 242, 242, 0.85);
+
+    /* Unique Colors */
+    --tooltip-color: #212121;
+
+    --footer-text-area-border-color: #999;
+    --footer-input-active-border-color: #212121;
+    --footer-input-color: #212121;
+    --footer-placeholder-color: #999;
+    --card-border-color: #212121;
+    --theme-changer-hover-color: #e6e6e6;
+
+    /* Colors for Effects */
+    --azul-hover: #071452;
+
+    /* Navbar Colors */
+    --navbar-bg: rgba(255, 0, 0, 0);
+}
+
+[data-theme="dark"] {
+    /* Definição de variáveis para o tema escuro */
+    --branco-preto: #0d0d0d;
+    --azul-preto: #0d0d0d;
+    --texto-primario: #F8F9FA;
+    --divider: #BDBDBD;
+    --branco-preto-transparente: rgba(13, 13, 13, 0.85);
+    --preto-branco: #ffffff;
+
+    --footer-text-area-border-color: #212121;
+    --footer-input-active-border-color: #333333;
+    --footer-input-color: #F8F9FA;
+    --footer-placeholder-color: #333333;
+    --card-border-color: none;
+    --theme-changer-hover-color: #1a1a1a;
+
+    /* Navbar Colors */
+    --navbar-bg: rgba(13, 13, 13, 0);
+}
+
+.navbar.scrolled {
+    background-color: var(--navbar-bg);
+    /* Fundo opaco quando rolado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+    background: none !important;
+}
+
+.back-detran {
+    background-color: #fff;
+    align-items: center;
+    height: 45px;
+    width: 120px;
+    margin-top: -10px;
+}
+
+.back-logo {
+    background-color: var(--azul-preto);
+    align-items: center;
+    height: 65px;
+    width: 250px;
+}
+
+/* 
+ *  Fonts
+ *  tnr = Times New Roman
+*/
+
+.roboto-light {
+    font-family: var(--font-family-roboto);
+    font-weight: 300;
+    font-style: normal;
+}
+
+.roboto-regular {
+    font-family: var(--font-family-roboto);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-bold {
+    font-family: var(--font-family-roboto);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.tnr-bold {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--azul-geral);
+}
+
+/* 
+ *  Font Sizes - Times New Roman
+ *  tnr = Times New Roman
+*/
+
+.tnr-title-size {
+    --font-size: 40px;
+    font-size: var(--font-size);
+}
+
+.tnr-title-size--lg {
+    --font-size: 54px;
+}
+
+.tnr-title-size--md {
+    --font-size: 28px;
+}
+
+.tnr-title-size--sm {
+    --font-size: 16px;
+}
+
+/* 
+ * Tooltips
+*/
+
+.custom-tooltip {
+    /* Sobrepondo as variáveis do bootstrap responsáveis por customizar os tooltips */
+    --bs-tooltip-bg: var(--tooltip-color) !important;
+    --bs-tooltip-color: var(--semibranco) !important;
+    font-size: 12px;
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Desativando as tooltips em telas abaixo de 768px */
+    .tooltip {
+        display: none;
+    }
+
+}
+
+/* 
+ * Light/Dark Theme Changer 
+*/
+
+/*------ Configurações ------*/
+.theme-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    margin-left: auto;
+    /* Empurra o botão de tema para a direita */
+    padding: 20px;
+
+    border: 2px solid var(--azul-geral);
+    /*Borda sol*/
+    border-radius: 100%;
+
+    background-color: var(--branco-preto);
+}
+
+/* Quando o cursor passar pela checkbox de troca de tema, aplicar uma background color */
+.theme-container:hover {
+    background-color: var(--theme-changer-hover-color);
+}
+
+.theme-container .moon {
+    position: absolute;
+    display: none;
+    /* Inicialmente oculto */
+    animation: keyframes-fill .5s;
+}
+
+.theme-container .sun {
+    position: absolute;
+    display: block;
+    /* Inicialmente sendo mostrado */
+    animation: keyframes-fill .5s;
+}
+
+/* ------ Quando ocorrer o evento da checkbox ------ */
+.theme-container input:checked~.moon {
+    display: block;
+    /* Mostra a lua quando marcado */
+}
+
+.theme-container input:checked~.sun {
+    display: none;
+    /* Esconde o sol quando marcado */
+}
+
+/* ------ Esconde a checkbox padrão ------ */
+.theme-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* ------ Animação ------ */
+@keyframes keyframes-fill {
+    0% {
+        transform: rotate(-360deg) scale(0);
+        opacity: 0;
+    }
+
+    75% {
+        transform: rotate(25deg);
+    }
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Retirando o background color de hover em telas menores (deixando o fundo igual o da navbar) */
+    .theme-container:hover {
+        background-color: var(--branco-preto);
+    }
+
+    /* Diminuindo o padding do checkbox de alternar o tema entre claro e escuro */
+    .theme-container {
+        padding: 17.5px;
+    }
+
+    /* Diminuindo a largura e altura do ícone de lua */
+    .ep--moon {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Diminuindo a largura e altura do ícone de sol */
+    .heroicons--sun {
+        width: 24px;
+        height: 24px;
+    }
+
+}
+
+/* 
+ * Animação de Visualização dos Elementos
+*/
+
+/* Estilo inicial dos elementos (ocultos e com opacidade zero) */
+.hidden-element {
+    opacity: 0;
+    transform: translateY(100px);
+    /* Movido para baixo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Classe que será adicionada para mostrar os elementos */
+.show-section {
+    opacity: 1;
+    transform: translateY(0);
+    /* Volta à posição original */
+}
+
+/* 
+ *  Dividers
+*/
+
+.divider {
+    /* Variável de width e margin do divider */
+    --divider-width: 100%;
+    --divider-margin-top: 10px;
+    --divider-margin-bottom: 10px;
+
+    /* Aplicando os valores */
+    width: var(--divider-width);
+    margin-top: var(--divider-margin-top) !important;
+    margin-bottom: var(--divider-margin-bottom);
+
+    /* Altura do divider */
+    height: 1px;
+
+    /* Cor do divider */
+    color: var(--divider);
+}
+
+/* Layout */
+
+.divider--header {
+    --divider-margin-top: 0px;
+    --divider-margin-bottom: 0px;
+}
+
+.divider--footer {
+    /* Margin do divider */
+    --divider-margin-bottom: 25px;
+}
+
+/* Tela Home */
+
+.divider--card {
+    /* Largura do divider */
+    --divider-width: 70%;
+
+    /* Margin do divider */
+    --divider-margin-top: 5px;
+}
+
+.divider--empty {
+    /* Largura do divider */
+    --divider-width: 400px;
+
+    /* Margin do divider */
+    --divider-margin-top: 20px;
+
+    /* Cor do divider */
+    color: var(--texto-primario);
+}
+
+/* Tela Play Info */
+
+.divider--play {
+    /* Margin do divider */
+    --divider-margin-top: 45px;
+    --divider-margin-bottom: 45px;
+}
+
+/* Tela About Us */
+
+.divider--about {
+    /* Display none para não ser mostrado inicialmente */
+    display: none;
+
+    /* Zerando as margins */
+    --divider-margin-top: 0px;
+    --divider-margin-bottom: 0px;
+}
+
+/* 
+ * Buttons
+*/
+
+.main-btn {
+    /* Variáveis do botão */
+    --btn-width: 100%;
+    --btn-padding: 10px 30px;
+    --btn-font-size: 16px;
+
+    /* Estilização do botão */
+    width: var(--btn-width);
+    padding: var(--btn-padding);
+    font-size: var(--btn-font-size);
+
+    border-radius: 5px;
+    border: none;
+
+    background-color: var(--azul-geral);
+    color: var(--semibranco);
+    text-decoration: none;
+    cursor: pointer;
+
+    /* Alinhamento com o ícone */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Layout */
+
+.main-btn--footer {
+    /* Gap entre o texto e o ícone */
+    gap: 5px;
+}
+
+/* Tela Home */
+
+.main-btn--hero {
+    /* Alterando as variáveis do botão */
+    --btn-width: 45%;
+    --btn-padding: 7px 40px;
+
+    /* Espaçamento do parágrafo */
+    margin-top: 15px;
+}
+
+.main-btn--card {
+    /* Alterando as variáveis do botão */
+    --btn-width: 90%;
+    --btn-padding: 10px 30px;
+
+    /* Espaçamento do título */
+    margin-top: 30px;
+
+    /* Gap entre o texto e o ícone */
+    gap: 7px;
+}
+
+.numb {
+    background-color: #464646;
+    margin-top: 100px;
+}
+
+.numbo {
+    font-size: 25px;
+}
+
+.main-btn--about {
+    /* Alterando as variáveis do botão */
+    --btn-padding: 25px 30px;
+
+    /* Botão vazado e com borda */
+    background-color: transparent;
+    border: 2px solid var(--semibranco);
+
+    /* Espaçamento entre as letras */
+    letter-spacing: 1.8px;
+}
+
+/* Tela Play Info */
+
+.main-btn--play {
+    /* Alterando as variáveis do botão */
+    --btn-font-size: 20px;
+    --btn-width: 400px;
+}
+
+/* Efeitos nos Botões */
+
+/* Botão Hero, Play, Project e Footer */
+.main-btn--hero,
+.main-btn--play,
+.main-btn--project,
+.main-btn--footer {
+    /* Transição de 0.25s para o efeito não ficar instantâneo */
+    transition: 0.25s;
+}
+
+.main-btn--hero:hover,
+.main-btn--play:hover,
+.main-btn--project:hover,
+.main-btn--footer:hover {
+    /* Background color do hover um pouco mais escuro que o azul geral e transição de 0.25s */
+    background-color: var(--azul-hover);
+    transition: 0.25s;
+}
+
+/* Botão Card */
+.main-btn--card {
+    /* Transição de 0.25s para o efeito não ficar instantâneo */
+    transition: 0.25s;
+}
+
+.main-btn--card:hover {
+    /* Background color do hover de marrom escuro e transição de 0.25s */
+    background-color: var(--marrom-escuro);
+    transition: 0.25s;
+}
+
+/* Botão About */
+.main-btn--about {
+    /* Transição de 0.25s para o efeito não ficar instantâneo */
+    transition: 0.25s;
+}
+
+.main-btn--about:hover {
+    /* Box shadow e border color quando em hover  */
+    box-shadow: 0px 0px 15px 5px var(--semibranco);
+    border-color: var(--marrom-escuro);
+
+    /* Transição de 0.25s */
+    transition: 0.25s;
+}
+
+/* 
+ * Toast Styles
+*/
+
+/* Toast de sucesso */
+.toast-success {
+    /* Alinhamento do toast */
+    display: flex;
+    place-items: center;
+
+    /* Cor do fundo do toast de sucesso */
+    background: var(--verde);
+
+    /* Box shadow do toast de sucesso */
+    box-shadow: -5px 5px 20px -5px rgba(0, 0, 0, 0.75);
+}
+
+/* 
+ *   Header/Navbar 
+*/
+
+header {
+    /* Espaçamento da fixed navbar */
+    margin-bottom: 0px;
+}
+
+header .navbar-brand {
+    /* Zerando a margin da logo da Autoescola e colocando 5px à direita */
+    margin: 0px 50px 0px 0px;
+}
+
+header .navbar-brand img {
+    /* Altura da logo da Autoescola */
+    height: 75px;
+}
+
+header .navbar {
+    /* Definindo altura, background color e box shadow */
+    height: 100px;
+    background-color: var(--azul-preto);
+    /*Cor navbar*/
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+header .offcanvas-body,
+.offcanvas-header {
+    /* Definindo background color para o menu lateral do OffCanvas */
+    background-color: rgba(0, 0, 0, 0);
+}
+
+header .offcanvas-title {
+    /* Cor do título do menu lateral do OffCanvas */
+    color: var(--azul-geral);
+}
+
+header .navbar-toggler {
+    /* Alterando o SVG de menu lateral da OffCanvas NavBar */
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M4 17.27v-1h16v1zm0-4.77v-1h16v1zm0-4.77v-1h16v1z'/%3E%3C/svg%3E");
+
+    /* Padding do ícone do menu lateral da OffCanvas NavBar */
+    padding: 4px 8px;
+
+    /* Removendo a cor de fundo do ícone do menu lateral da OffCanvas NavBar */
+    background: none !important;
+
+    /* Removendo a borda do ícone do menu lateral da OffCanvas NavBar */
+    border: 0px;
+}
+
+header .navbar-toggler.dark-theme {
+    /* Quando for aplicada a classe "dark-theme", irá mudar a cor do ícone de menu lateral da OffCanvas NavBar */
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M4 17.27v-1h16v1zm0-4.77v-1h16v1zm0-4.77v-1h16v1z'/%3E%3C/svg%3E");
+}
+
+header .navbar-toggler:focus,
+header .navbar-toggler:active,
+header .navbar-toggler-icon:focus {
+    /* Removendo o efeito de box shadow quando o menu lateral da OffCanvas NavBar é clicado */
+    outline: none;
+    box-shadow: none;
+}
+
+header .offcanvas .btn-close {
+    /* Alterando o SVG do botão de fechar a OffCanvas NavBar */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23777' %3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+
+    /* Removendo o efeito de box shadow quando o botão de fechar da OffCanvas NavBar é clicado */
+    outline: none;
+    box-shadow: none;
+}
+
+header .divider--header {
+    /* Escondendo os dividers do header inicialmente */
+    display: none;
+}
+
+header .navbar .container-fluid {
+    /* Espaçamento lateral da navbar */
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+header .navbar-nav {
+    /* Espaçamento entre os itens da navbar */
+    column-gap: 50px;
+    /* Alinhando os itens navbar ao centro */
+    align-items: center;
+}
+
+header .nav-item a {
+    /* Fonte e cor dos itens da navbar (exceto o item ativo) */
+    font-size: 16px;
+    color: white !important;
+}
+
+header .nav-item a:hover,
+.nav-item a:visited {
+    /* Sobrepondo o estilo do bootstrap, para que ao passar o mouse pelo item da navbar, mantenha sua cor padrão, assim como depois de visitar o link */
+    color: var(--azul-geral);
+    text-decoration: none;
+}
+
+header .nav-pills .nav-link.active {
+    /* Alterando as variáveis do bootstrap responsáveis por alterar a cor de fundo e a cor de texto quando o item da navbar está ativo */
+    --bs-nav-pills-link-active-bg: #ffff;
+    /*Fundo links navbar*/
+    color: #033359 !important;
+
+    /* Padding no item ativo, utilizando o !important para sobrepor estilos do bootstrap */
+    padding: 10px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+
+
+header .nav-pills .nav-link {
+    /* Alterando a variável do bootstrap responsável por alterar o border radius quando o item da navbar está ativo */
+    --bs-nav-pills-border-radius: 0px;
+}
+
+/* Efeito de Underline Hover nos itens da NavBar */
+
+header .nav-item {
+    /* Posição relative para os itens da NavBar */
+    position: relative;
+}
+
+header .nav-item::after {
+    /* Conteúdo vazio e posição absolute para o underline */
+    content: '';
+    position: absolute;
+
+    /* Largura de 100% de acordo com o tamanho do item da NavBar e altura de 2px para o underline */
+    width: 100%;
+    height: 2px;
+
+    /* Bottom e left 0 para se encaixar no item da NavBar */
+    bottom: 0;
+    left: 0;
+
+    /* Background color para o underline */
+    background-color: var(--branco);
+
+    /* Propriedades do efeito */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+header .nav-item:hover::after {
+    /* Fazendo o efeito aparecer quando sobre o hover se originando da esquerda embaixo */
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Estilo do botão flutuante */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px; /* Ajuste a distância do canto inferior */
+    right: 20px; /* Ajuste a distância do canto direito */
+    width: 70px;
+    height: 70px;
+    z-index: 1000;
+    border-radius: 50%;
+    background-color: #25d366;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-button img {
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+}
+
+/* Efeito de escala ao passar o mouse */
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+/* Animação pulsante ao redor */
+.pulse-ring {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(24, 211, 93, 0.781);
+    animation: pulse-animation 1.7s infinite;
+    z-index: 0;
+}
+
+/* Animação keyframes */
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+
+/* 
+ *  @media Header/Navbar
+*/
+
+/* `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+
+    /* Diminuindo o espaçamento lateral da NavBar */
+    header .navbar .container-fluid {
+        padding-left: 75px;
+        padding-right: 75px;
+    }
+
+}
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo o espaçamento entre os itens da NavBar */
+    header .navbar-nav {
+        column-gap: 40px;
+    }
+
+    .theme-container {
+        margin-right: 10px;
+    }
+
+    .nav-item {
+        white-space: nowrap;
+        /* Impede que o texto quebre em várias linhas */
+        overflow: hidden;
+        /* Oculta qualquer conteúdo que exceda o contêiner */
+        text-overflow: ellipsis;
+        /* Adiciona "..." caso o texto seja cortado */
+
+    }
+
+
+    /* Diminuindo o espaçamento lateral da NavBar */
+    header .navbar .container-fluid {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* MESADIGITALIZADORA:  */
+    header .nav-item::after {
+        /* Removendo o efeito de underline nos itens da Navbar quando a proporção de tela for menor (tablets ou menor) */
+        display: none;
+    }
+
+    header .navbar-nav {
+        /* Diminuindo o espaçamento entre cada item da NavBar pela row (linha) e alinhando os itens no começo da OffCanvas NavBar */
+        row-gap: 10px;
+        align-items: start;
+    }
+
+    .offcanvas {
+        background: linear-gradient(135deg, #002244, #00aaff) !important;
+        /* Gradiente */
+        color: #ffffff;
+        /* Cor do texto */
+        border-left: 2px solid #ffffff;
+        /* Borda à esquerda, opcional */
+    }
+
+    header .offcanvas-header {
+        /* Espaçamento para o título da OffCanvas NavBar */
+        padding-bottom: 30px;
+    }
+
+    header .navbar-toggler-white {
+        /* Tornando visível o ícone branco do menu lateral da OffCanvas NavBar */
+        display: block;
+    }
+
+    header .divider--header {
+        /* Tornando visível os dividers do header quando a proporção de tela for menor (só aparecerá na OffCanvar NavBar) */
+        display: block;
+        color: var(--preto-branco) !important;
+    }
+
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    header .navbar {
+        /* Retirando a posição de fixed da Navbar em telas menores do que Tablet (768px) */
+        position: absolute !important;
+    }
+
+    .offcanvas {
+        background: linear-gradient(135deg, #002244, #00aaff) !important;
+        /* Gradiente */
+        color: #ffffff;
+        /* Cor do texto */
+        border-left: 2px solid #ffffff;
+        /* Borda à esquerda, opcional */
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Diminuindo o espaçamento lateral da NavBar */
+    header .navbar .container-fluid {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .offcanvas {
+        background: linear-gradient(135deg, #002244, #00aaff) !important;
+        /* Gradiente */
+        color: #ffffff;
+        /* Cor do texto */
+        border-left: 2px solid #ffffff;
+        /* Borda à esquerda, opcional */
+    }
+
+    .about-small {
+        text-align: justify !important;
+    }
+
+    .txt-btn-small {
+        font-size: 15px !important;
+        white-space: nowrap;
+        /* Impede que o texto quebre em várias linhas */
+        overflow: hidden;
+        /* Oculta qualquer conteúdo que exceda o contêiner */
+        text-overflow: ellipsis;
+        /* Adiciona "..." caso o texto seja cortado */
+    }
+
+    header .nav-item a {
+        /* Diminuindo o font size dos links da Offcanvas Navbar */
+        font-size: 14px;
+        color: var(--preto-branco) !important;
+    }
+
+
+}
+
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o espaçamento lateral da NavBar */
+    header .navbar .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    header .navbar-brand img {
+        /* Diminuindo o tamanho da imagem da Navbar Brand em largura e altura em 10% */
+        width: 150px;
+        height: 67.5px;
+    }
+
+    header .navbar-toggler {
+        /* Zerando o espaçamento na lateral direita do ícone de menu */
+        padding-right: 0px;
+    }
+
+
+    header .offcanvas {
+        /* Removendo a borda da OffCanvas Navbar */
+        border: none !important;
+    }
+
+    .about-small {
+        text-align: justify !important;
+    }
+
+    .hero-section {
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
+    .offcanvas {
+        background: linear-gradient(135deg, #002244, #00aaff) !important;
+        /* Gradiente */
+        color: #ffffff;
+        /* Cor do texto */
+        border-left: 2px solid #ffffff;
+        /* Borda à esquerda, opcional */
+    }
+
+
+    .txt-btn-small {
+        font-size: 11px !important;
+        white-space: nowrap;
+        /* Impede que o texto quebre em várias linhas */
+        overflow: hidden;
+        /* Oculta qualquer conteúdo que exceda o contêiner */
+        text-overflow: ellipsis;
+        /* Adiciona "..." caso o texto seja cortado */
+    }
+}
+
+/* 
+ * Footer
+*/
+
+footer {
+    /* Display flex e centralizando o footer no centro */
+    display: flex;
+    justify-content: center;
+
+    /* Cor de fundo */
+    background-color: var(--branco-preto);
+
+    /* Padding embaixo e em cima de 100px (bottom e top) */
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+
+#footer-area {
+    /* Limitando em 60% do width */
+    width: 60%;
+}
+
+#footer-area h2 {
+    /* Margin para espaçar o título das seções do footer dos elementos abaixo */
+    margin-bottom: 20px;
+}
+
+#contact-icons {
+    /* Espaçando os ícones de contato */
+    gap: 15px;
+}
+
+#footer-area p {
+    /* Definindo largura para o parágrafo da seção de localização do Footer */
+    width: 90%;
+
+    /* Cor de texto do parágrafo da seção de localização do Footer */
+    color: var(--texto-primario);
+}
+
+#footer-area label {
+    /* Definindo cor para a label da seção de fale conosco */
+    color: var(--footer-placeholder-color);
+}
+
+#footer-area .form-control {
+    /* Alterando as variáveis do bootstrap responsáveis pelo width, border radius do input e cor */
+    --bs-border-width: 1px;
+    --bs-border-radius: 5px;
+    --bs-border-color: var(--footer-text-area-border-color);
+
+    background-color: var(--branco-preto);
+}
+
+.form-floating>label::after {
+    /* Tornando o background color da label transparente */
+    background-color: transparent !important;
+}
+
+input:focus,
+input:active,
+textarea:focus,
+textarea:active {
+    /* Sobrepondo os estilos do bootstrap de box shadow quando o input estiver ativo */
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: var(--footer-input-active-border-color) !important;
+}
+
+#footer-area textarea {
+    /* Alterando a altura de exibição da textarea do footer */
+    height: 80px;
+    margin-bottom: 20px;
+
+    /* Cor do texto do textarea do footer */
+    color: var(--footer-input-color);
+}
+
+#footer-area input {
+    /* Cor do texto dos inputs do footer */
+    color: var(--footer-input-color);
+}
+
+/* 
+ * @media Footer
+*/
+
+/* `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+
+    /* Aumentando a largura do footer para 70% da página */
+    #footer-area {
+        width: 70%;
+    }
+
+}
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Aumentando a largura do footer para 80% da página */
+    #footer-area {
+        width: 80%;
+    }
+
+    /* Zerando o padding das colunas de cada seção do Footer */
+    #footer-area .col-md-4 {
+        padding: 0px;
+    }
+
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Aumentando a largura do footer para 100% da página e dando um espaçamento lateral */
+    #footer-area {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    /* Diminuindo o font size do parágrafo de localização do Footer */
+    #footer-area p {
+        font-size: 14px;
+    }
+
+    /* Diminuindo o font size do botão do Footer */
+    #footer-area .main-btn--footer {
+        --btn-font-size: 14px;
+    }
+
+    /* Diminuindo a largura e altura do ícone de enviar mensagem do botão do Footer */
+    .fluent--send-28-filled {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Diminuindo o font size das labels do Footer */
+    #footer-area label {
+        font-size: 14px;
+    }
+
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Definindo largura para o parágrafo da seção de localização de 100% */
+    #footer-area p {
+        width: 100%;
+    }
+
+    /* Centralizando o conteúdo das seções do Footer (exceto a seção de Fale Conosco), espaçamento entre as seções de 20px */
+    #footer-area .footer-section-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+
+        margin-bottom: 20px;
+    }
+
+    /* Centralizando o título da seção de Fale Conosco do Footer e espaçando lateralmente */
+    #footer-area .footer-section-text-center {
+        text-align: center;
+
+        padding: 0 100px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Diminuindo o espaçamento lateral da seção Fale Conosco do Footer */
+    #footer-area .footer-section-text-center {
+        padding: 0 25px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o espaçamento superior e inferior do Footer */
+    footer {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    /* Zerando o espaçamento lateral da seção Fale Conosco do Footer */
+    #footer-area .footer-section-text-center {
+        padding: 0px;
+    }
+
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+#space {
+    margin-top: 50px;
+}
+
+#detran-logo {
+    width: 115px;
+    /* Ajuste o tamanho da largura */
+    height: auto;
+    /* Mantém a proporção da imagem */
+}
+
+/* Container dos cartões */
+.cartoes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    padding: 16px;
+}
+
+/* Estilo do container do cartão */
+.cartao {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra para dar profundidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    border-color: #fff;
+}
+
+/* Adiciona efeito de elevação ao passar o mouse */
+.cartao:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Conteúdo do cartão */
+.cartao-conteudo {
+    padding: 16px;
+    text-decoration: none;
+}
+
+/* Título do cartão */
+.cartao-titulo {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #033359;
+    /* Azul escuro */
+    margin-bottom: 15px;
+}
+
+/* Texto do cartão */
+.cartao-texto {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+    /* Cinza para contraste */
+    margin-bottom: 16px;
+}
+
+/* Botão do cartão */
+.cartao-botao {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #033359;
+    /* Azul escuro */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    margin-top: 25px;
+}
+
+/* Efeito hover no botão */
+.cartao-botao:hover {
+    background-color: #f07f3c;
+    /* Azul mais claro */
+}
+
+
+/* Responsividade: ajustes para telas menores */
+@media (max-width: 480px) {
+    .cartao {
+        font-size: 0.9rem;
+    }
+
+    .cartao-botao {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+}
+.cookie-consent {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #042540; /* Cor azul escuro */
+    color: #ffffff; /* Texto amarelo */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 425px;
+    height: 160px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    z-index: 9999;
+    text-align: center;
+    border:  2px solid #144b76;
+}
+
+.cookie-consent__message {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.cookie-consent__link {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.cookie-consent__agree {
+    background-color: transparent;
+    color: #f6c453;
+    border: 2px solid #f6c453;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cookie-consent__agree:hover {
+    background-color: #f6c453;
+    color: #012c54;
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    .cookie-consent {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: #042540; /* Cor azul escuro */
+        color: #ffffff; /* Texto amarelo */
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        height: 160px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        z-index: 9999;
+        text-align: center;
+        border:  2px solid #144b76;
+    }
+    
+    .cookie-consent__message {
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+    
+    .cookie-consent__link {
+        color: #ffffff;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    
+    .cookie-consent__agree {
+        background-color: transparent;
+        color: #f6c453;
+        border: 2px solid #f6c453;
+        border-radius: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        width: 250px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+}
