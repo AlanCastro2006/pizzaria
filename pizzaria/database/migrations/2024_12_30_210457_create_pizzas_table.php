@@ -9,7 +9,7 @@ class CreatePizzasTable extends Migration
     public function up()
     {
         Schema::create('pizzas', function (Blueprint $table) {
-            $table->id('pizza_id'); // Primary key
+            $table->id(); // Primary key
             $table->string('nome_pizza');
             $table->text('desc_pizza');
             $table->decimal('preco_pizza', 8, 2); // Ex: 999,999.99
