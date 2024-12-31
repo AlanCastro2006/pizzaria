@@ -16,11 +16,11 @@ return new class extends Migration
             $table->string('nome_usuario');
             $table->string('email_usuario')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('senha_usuario');
+            $table->string('senha_usuario'); // Será usado Hash::make para criptografar
             $table->string('end_usuario');
             $table->string('tel_usuario');
             $table->enum('tipo_usuario', ['cliente', 'admin'])->default('cliente');
-            $table->integer('pontos_usuario')->default(0); // Pontos de fidelidade
+            $table->integer('pontos_usuario')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -46,7 +46,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('usuarios'); // Nome correto da tabela
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
     }

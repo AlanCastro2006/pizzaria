@@ -1,0 +1,356 @@
+/* ------------------------------------------------ GLOBAL ---------------------------------------------------------- */
+
+/* 
+ *  General 
+*/
+
+* {
+    font-family: var(--font-family-roboto);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Background color da página */
+    background: var(--gradient-background);
+
+    /* Garantindo que o gradiente cubra toda a área da tela */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.row {
+    /* View Port da Tela */
+    height: 85vh;
+}
+
+/* 
+ *  Global Variables 
+*/
+
+:root {
+    /* Font Roboto */
+    --font-family-roboto: 'Roboto', sans-serif;
+
+    /* Colors */
+    --vermelho-geral: #D5321D;
+    --branco: #FFFFFF;
+    --semibranco: #F8F9FA;
+    --preto: #000000;
+    --cinza: #999999;
+    --amarelo: #F29810;
+    --verde: #30A61D;
+    --azul: #3771C8;
+    --row: #EDECEC;
+    --divider: #DEE2E6;
+    --cinza-escuro: #333333;
+    --input-active-color: #555555;
+    --gradient-background: linear-gradient(180deg, #404040 0%, #000 100%);
+
+    /* Colors for Effects */
+    --vermelho-hover: #b42b18;
+}
+
+/*
+ * Icons
+*/
+
+/* Logout Icon */
+.material-symbols--logout {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h7v2zm11-4l-1.375-1.45l2.55-2.55H9v-2h8.175l-2.55-2.55L16 7l5 5z'/%3E%3C/svg%3E");
+}
+
+/* Plus Icon */
+.ic--baseline-plus {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z'/%3E%3C/svg%3E");
+}
+
+/* Eye Icon */
+.ri--eye-line {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M12 3c5.392 0 9.878 3.88 10.819 9c-.94 5.12-5.427 9-10.819 9s-9.878-3.88-10.818-9C2.122 6.88 6.608 3 12 3m0 16a9.005 9.005 0 0 0 8.778-7a9.005 9.005 0 0 0-17.555 0A9.005 9.005 0 0 0 12 19m0-2.5a4.5 4.5 0 1 1 0-9a4.5 4.5 0 0 1 0 9m0-2a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5'/%3E%3C/svg%3E");
+}
+
+/* Eye Off Icon */
+.ri--eye-off-line {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M17.883 19.297A10.95 10.95 0 0 1 12 21c-5.392 0-9.878-3.88-10.818-9A11 11 0 0 1 4.52 5.935L1.394 2.808l1.414-1.414l19.799 19.798l-1.414 1.415zM5.936 7.35A8.97 8.97 0 0 0 3.223 12a9.005 9.005 0 0 0 13.201 5.838l-2.028-2.028A4.5 4.5 0 0 1 8.19 9.604zm6.978 6.978l-3.242-3.241a2.5 2.5 0 0 0 3.241 3.241m7.893 2.265l-1.431-1.431A8.9 8.9 0 0 0 20.778 12A9.005 9.005 0 0 0 9.552 5.338L7.974 3.76C9.221 3.27 10.58 3 12 3c5.392 0 9.878 3.88 10.819 9a10.95 10.95 0 0 1-2.012 4.593m-9.084-9.084Q11.86 7.5 12 7.5a4.5 4.5 0 0 1 4.492 4.778z'/%3E%3C/svg%3E");
+}
+
+/* Edit Icon */
+.bx--edit {
+    display: flex;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='m7 17.013l4.413-.015l9.632-9.54c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.756-.756-2.075-.752-2.825-.003L7 12.583zM18.045 4.458l1.589 1.583l-1.597 1.582l-1.586-1.585zM9 13.417l6.03-5.973l1.586 1.586l-6.029 5.971L9 15.006z'/%3E%3Cpath fill='%23f2f2f2' d='M5 21h14c1.103 0 2-.897 2-2v-8.668l-2 2V19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2'/%3E%3C/svg%3E");
+}
+
+/* Delete Icon */
+.ph--trash-bold {
+    display: flex;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='%23f2f2f2' d='M216 48h-36V36a28 28 0 0 0-28-28h-48a28 28 0 0 0-28 28v12H40a12 12 0 0 0 0 24h4v136a20 20 0 0 0 20 20h128a20 20 0 0 0 20-20V72h4a12 12 0 0 0 0-24M100 36a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4v12h-56Zm88 168H68V72h120Zm-72-100v64a12 12 0 0 1-24 0v-64a12 12 0 0 1 24 0m48 0v64a12 12 0 0 1-24 0v-64a12 12 0 0 1 24 0'/%3E%3C/svg%3E");
+}
+
+/* Alert Danger Icon */
+.jam--triangle-danger-f {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-2 -3 24 24'%3E%3Cpath fill='%23ea868f' d='m12.8 1.613l6.701 11.161c.963 1.603.49 3.712-1.057 4.71a3.2 3.2 0 0 1-1.743.516H3.298C1.477 18 0 16.47 0 14.581c0-.639.173-1.264.498-1.807L7.2 1.613C8.162.01 10.196-.481 11.743.517c.428.276.79.651 1.057 1.096M10 14a1 1 0 1 0 0-2a1 1 0 0 0 0 2m0-9a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0V6a1 1 0 0 0-1-1'/%3E%3C/svg%3E");
+}
+
+/* Date Icon */
+.fluent-mdl2--date-time {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2048 2048'%3E%3Cpath fill='%23f2f2f2' d='M1792 993q60 41 107 93t81 114t50 131t18 141q0 119-45 224t-124 183t-183 123t-224 46q-91 0-176-27t-156-78t-126-122t-85-157H128V128h256V0h128v128h896V0h128v128h256zM256 256v256h1408V256h-128v128h-128V256H512v128H384V256zm643 1280q-3-31-3-64q0-86 24-167t73-153h-97v-128h128v86q41-51 91-90t108-67t121-42t128-15q100 0 192 33V640H256v896zm573 384q93 0 174-35t142-96t96-142t36-175q0-93-35-174t-96-142t-142-96t-175-36q-93 0-174 35t-142 96t-96 142t-36 175q0 93 35 174t96 142t142 96t175 36m64-512h192v128h-320v-384h128zM384 1024h128v128H384zm256 0h128v128H640zm0-256h128v128H640zm-256 512h128v128H384zm256 0h128v128H640zm384-384H896V768h128zm256 0h-128V768h128zm256 0h-128V768h128z'/%3E%3C/svg%3E");
+}
+
+/* Back Icon */
+.lets-icons--back {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='m4 10l-.707.707L2.586 10l.707-.707zm17 8a1 1 0 1 1-2 0zM8.293 15.707l-5-5l1.414-1.414l5 5zm-5-6.414l5-5l1.414 1.414l-5 5zM4 9h10v2H4zm17 7v2h-2v-2zm-7-7a7 7 0 0 1 7 7h-2a5 5 0 0 0-5-5z'/%3E%3C/svg%3E");
+}
+
+/* Restore Icon */
+.ic--baseline-restore {
+    display: flex;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M13 3a9 9 0 0 0-9 9H1l3.89 3.89l.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7s-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.95 8.95 0 0 0 13 21a9 9 0 0 0 0-18m-1 5v5l4.28 2.54l.72-1.21l-3.5-2.08V8z'/%3E%3C/svg%3E");
+}
+
+/* 
+ * Tooltips
+*/
+
+.custom-tooltip {
+    /* Sobrepondo as variáveis do bootstrap responsáveis por customizar os tooltips */
+    --bs-tooltip-bg: var(--semibranco) !important;
+    --bs-tooltip-color: var(--preto) !important;
+    font-size: 12px;
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Desativando as tooltips em telas abaixo de 768px */
+    .tooltip {
+        display: none;
+    }
+
+}
+
+/* 
+ *  Fonts
+*/
+
+.roboto-regular {
+    font-family: var(--font-family-roboto);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-medium {
+    font-family: var(--font-family-roboto);
+    font-weight: 500;
+    font-style: normal;
+}
+  
+.roboto-bold {
+    font-family: var(--font-family-roboto);
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* 
+ * Buttons
+*/
+
+.main-btn {
+    /* Variáveis do botão */
+    --btn-width: 100%;
+    --btn-padding: 10px 30px;
+    --btn-font-size: 18px;
+
+    /* Estilização do botão */
+    width: var(--btn-width);
+    padding: var(--btn-padding);
+    font-size: var(--btn-font-size);
+
+    border-radius: 5px;
+    border: none;
+    transition: 0.25s;
+
+    background-color: var(--vermelho-geral);
+    color: var(--semibranco);
+    text-decoration: none;
+    cursor: pointer;
+
+    /* Alinhamento com o ícone */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tela de Cards */
+
+.main-btn--new {
+    /* Definindo uma largura e altura para o botão e retirando seu padding */
+    --btn-width: 100px;
+    --btn-padding: 0;
+    height: 50px;
+
+    /* Border radius do botão */
+    border-radius: 10px;
+
+    /* Background color do botão */
+    background-color: var(--verde);
+}
+
+.main-btn--filter {
+    /* Definindo uma largura e altura para o botão e retirando seu padding */
+    --btn-width: 100px;
+    --btn-padding: 0;
+    height: 50px;
+
+    /* Border radius do botão */
+    border-radius: 10px;
+
+    /* Background color do botão */
+    background-color: var(--azul);
+}
+
+.main-btn--trash {
+    /* Definindo uma largura e altura para o botão e retirando seu padding */
+    --btn-width: 100px;
+    --btn-padding: 0;
+    height: 50px;
+
+    /* Border radius do botão */
+    border-radius: 10px;
+
+    /* Background color do botão */
+    background-color: var(--vermelho-geral);
+
+    /* Espaçamento entre o texto e o ícone */
+    gap: 2px;
+}
+
+.main-btn--back {
+    /* Definindo uma largura e altura para o botão e retirando seu padding */
+    --btn-width: 100px;
+    --btn-padding: 0;
+    height: 50px;
+
+    /* Border radius do botão */
+    border-radius: 10px;
+
+    /* Background color do botão */
+    background-color: var(--cinza);
+}
+
+/* 
+ *   Header/Navbar 
+*/
+
+header {
+    /* Espaçamento da fixed navbar */
+    margin-bottom: 100px;
+}
+
+header .navbar {
+    /* Definindo altura, background color */
+    height: 100px;
+    background-color: var(--preto);
+}
+
+header .navbar-brand img {
+    /* Altura da logo do Teatro Dona Zenaide */
+    height: 75px;
+}
+
+header .navbar .container-fluid {
+    /* Espaçamento lateral da navbar */
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+header .navbar-nav {
+    /* Alinhando os itens navbar ao centro */
+    align-items: center;
+    
+    /* Gap entre os itens da navbar de 10px */
+    gap: 10px;
+}
+
+header #admin-indicator {
+    /* Fonte, cor e espaçamento entre as letras do item do Modo Administrador da navbar */
+    font-size: 16px;
+    color: var(--semibranco);
+    letter-spacing: 2px;
+
+    /* Definindo uma cor de fundo para o item de Modo Administrador da navbar */
+    background-color: var(--vermelho-geral);
+
+    /* Espaçamento interno (substituindo o do Bootstrap) e border radius do item de Modo Administrador da navbar */
+    padding: 15px 30px !important;
+    border-radius: 15px;
+}
+
+header #admin-indicator:hover, #admin-indicator:visited, #admin-indicator:link {
+    /* Sobrepondo o estilo do bootstrap, para que ao passar o mouse pelo item do Modo Administrador da navbar, mantenha sua cor padrão, assim como depois de visitar o link */
+    color: var(--semibranco);
+    text-decoration: none;
+}
+
+header #logout-icon {
+    /* Cor e font size do texto se logout da Navbar */
+    color: var(--semibranco);
+    font-size: 16px;
+
+    /* Centralizando o ícone de logout na Navbar */
+    padding-top: 10px;
+}
+
+header #logout-icon:hover {
+    /* Adicionando um underline no texto de sair ao hover para melhorar a experiência do usuário */
+    text-decoration: underline;
+}

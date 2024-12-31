@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -18,21 +19,29 @@ class AuthController extends Controller
     {
         // Validação dos campos
         $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
+            'email_usuario' => 'required|email',
+            'senha_usuario' => 'required',
         ]);
 
-        // Tentativa de autenticação
-        if (Auth::attempt(['email_usuario' => $request->email, 'password' => $request->password])) {
+        // Tentativa de autenticação personalizada
+        $credentials = [
+            'email_usuario' => $request->email_usuario,
+            'password' => $request->senha_usuario, // A senha será verificada manualmente
+        ];
+
+        $user = \App\Models\User::where('email_usuario', $credentials['email_usuario'])->first();
+
+        if ($user && Hash::check($credentials['password'], $user->senha_usuario)) {
+            Auth::login($user);
             $request->session()->regenerate();
 
             // Redireciona para a home (ou outro local)
-            return redirect()->intended('/');
+            return redirect()->intended('/adm/buttons');
         }
 
         // Retorna erro se as credenciais forem inválidas
         return back()->withErrors([
-            'email' => 'As credenciais fornecidas estão incorretas.',
-        ])->onlyInput('email');
+            'email_usuario' => 'As credenciais fornecidas estão incorretas.',
+        ])->onlyInput('email_usuario');
     }
 }

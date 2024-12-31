@@ -1,0 +1,203 @@
+/* ------------------------------------------------ LOGIN ---------------------------------------------------------- */
+
+/* 
+ * Login Area Section
+*/
+
+#login-area {
+    /* Background color da seção de Login Area */
+    background: var(--gradient-background);
+
+    /* Garantindo que o gradiente cubra toda a área da seção de Login Area */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#login-box {
+    /* Background color da Box de Login */
+    background-color: var(--preto);
+    
+    /* Espaçamento interno e arredondamento das bordas */
+    padding: 100px 100px 130px 100px;
+    border-radius: 5px;
+}
+
+#login-box h1 {
+    /* Font size e cor do título de Login da Box de Login */
+    font-size: 36px;
+    color: var(--semibranco);
+}
+
+#login-box h2 {
+    /* Font size e cor do h2 acima dos inputs da Box de Login */
+    font-size: 18px;
+    color: var(--semibranco);
+}
+
+#login-box .form-control {
+    /* Alterando as variáveis do bootstrap responsáveis pelo width, border radius do input e cor */
+    --bs-border-width: 1px;
+    --bs-border-radius: 5px;
+    --bs-border-color: var(--cinza-escuro);
+
+    background-color: var(--preto);
+}
+
+#login-box input {
+    /* Definindo uma cor para os inputs da Box de Login */
+    color: var(--semibranco);
+}
+
+input:focus, input:active, textarea:focus, textarea:active {
+    /* Sobrepondo os estilos do bootstrap de box shadow quando o input estiver ativo */
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: var(--input-active-color) !important;
+}
+
+#login-box label {
+    /* Definindo uma cor para a label da Box de Login */
+    color: var(--cinza-escuro);
+}
+
+.form-floating > label::after {
+    /* Tornando o background color da label transparente */
+    background-color: transparent !important;
+}
+
+#login-box .password-input {
+    /* Position relative para a div do input de senha */
+    position: relative;
+}
+
+#login-box .password-input .togglePassword {
+    /* Position absolute para o ícone de mostrar/esconder a senha */
+    position: absolute;
+    cursor: pointer;
+
+    /* Posicionando o ícone dentro do input */
+    right: 20px;
+    top: calc(50% - 10px);
+}
+
+#login-box .main-btn:hover {
+    /* Efeito de hover no botão de 'Entrar' */
+    background-color: var(--vermelho-hover);
+    transition: 0.25s;
+}
+
+#login-box #btn-login-div {
+    /* Espaçamento entre o botão de login e o input de senha */
+    margin-top: 48px;
+}
+
+/* Alerts */
+
+#login-box .alert .btn-close {
+    /* Alterando o SVG do botão de fechar dos Alerts da Box de Login */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ea868f' %3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+
+    /* Removendo os efeitos do botão de fechar dos Alerts da Box de Login */
+    outline: none;
+    box-shadow: none;
+}
+
+#login-box .alert-danger {
+    /* Alterando as classes do Bootstrap para estilizar o Alert Danger da Box de Login */
+    --bs-alert-color: #ea868f;
+    --bs-alert-bg: #2c0b0e;
+    --bs-alert-border-color: #842029;
+    --bs-alert-link-color: #ea868f;
+}
+
+#login-box .alert-password {
+    /* Zerando a margin botton do alert de erro de senha */
+    margin-bottom: 0;
+}
+
+#login-box .alert p {
+    /* Zerando a margin bottom dos parágrafos dos alerts */
+    margin-bottom: 0;
+}
+
+/* 
+ * @media Sections
+*/
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    #login-box h1 {
+        /* Diminuindo o font size do título de Login da Box de Login */
+        font-size: 30px;
+    }
+    
+    #login-box h2 {
+        /* Diminuindo o font size do h2 acima dos inputs da Box de Login */
+        font-size: 14px;
+    }
+
+    #login-box label {
+        /* Diminuindo o font size das label */
+        font-size: 14px;
+    }
+
+    #login-box .main-btn {
+        /* Diminuindo o font size do botão de entrar da Box de Login */
+        --btn-font-size: 14px;
+    }
+
+    #login-box .alert p {
+        /* Diminuindo o font size dos parágrafos dos alerts */
+        font-size: 14px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    header .navbar .container-fluid {
+        /* Diminuindo o espaçamento lateral da navbar */
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    #login-area {
+        /* Espaçamento nas laterais da box de login para desgrudar dos cantos da tela */
+        padding: 0 20px;
+    }
+
+    #login-box {
+        /* Diminuindio o espaçamento interno da box de login */
+        padding: 60px 30px 90px 30px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    header .navbar .container-fluid {
+        /* Diminuindo o espaçamento lateral da navbar */
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    #login-area {
+        /* Dimninuindo o espaçamento nas laterais da box de login para desgrudar dos cantos da tela */
+        padding: 0 10px;
+    }
+
+    #login-box {
+        /* Diminuindio o espaçamento interno da box de login */
+        padding: 30px 20px 60px 20px;
+    }
+
+    #login-box h1, #login-box .password-input {
+        /* Diminuindo o espaçamento inferior do h1 e do input de senha */
+        margin-bottom: 24px !important;
+    }
+
+}
