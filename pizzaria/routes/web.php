@@ -1,24 +1,37 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('pizzaria_user.home.home');
-});
-
 use App\Http\Controllers\AuthController;
-
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-
 use App\Http\Controllers\BebidasAdmController;
 use App\Http\Controllers\PizzasAdmController;
 use App\Http\Controllers\PromoAdmController;
 
+//Rota da tela Inicial (Home)
+Route::get('/', function () {
+    return view('pizzaria_user.home.home');
+});
+
+//Rota que retorna a tela de login
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+//Rota que faz o login
+Route::post('/login', [AuthController::class, 'login']);
+//Rota que retorna os botões do modo admin
 Route::get('/adm/buttons', function () {
     return view('pizzaria_admin.buttons');
 });
 
-Route::get('/adm/bebidas', [BebidasAdmController::class, 'index'])->name('bebidas_adm.bebidas');
-Route::get('/adm/pizzas', [PizzasAdmController::class, 'index'])->name('pizzas_adm.pizzas');
-Route::get('/adm/promo', [PromoAdmController::class, 'index'])->name('promo_adm.promo');
+//----------------------------------------------//----------------------------------------------//----------------------------------------------
+//----------------------------------------------ROTAS PROTEGIDAS POR AUTENTICAÇÃO---------------------------------------------------------------
+//----------------------------------------------//----------------------------------------------//----------------------------------------------
+
+//----------------------------------------------ROTAS DE ADMINISTRAÇÃO DE BEBIDAS---------------------------------------------------------------
+Route::prefix('adm')->group(function () {
+    //Rota que exibe a lista as bebidas
+    Route::get('/bebidas', [BebidasAdmController::class, 'index'])->name('bebidas_adm.index'); 
+     //Rota para adicionar uma nova bebida
+    Route::post('/bebidas/store', [BebidasAdmController::class, 'store'])->name('bebidas_adm.store');
+    //Rota que atualiza uma bebida
+    Route::put('/bebidas/update/{id}', [BebidasAdmController::class, 'update'])->name('bebidas_adm.update'); 
+    //Rota que exclui uma bebida
+    Route::delete('/bebidas/destroy/{id}', [BebidasAdmController::class, 'destroy'])->name('bebidas_adm.destroy'); 
+});

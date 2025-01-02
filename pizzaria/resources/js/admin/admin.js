@@ -5,6 +5,7 @@ import '../bootstrap';
 import '../../css/pizzaria_admin/global.css';
 
 import '../../css/pizzaria_admin/login.css';
+import '../../css/pizzaria_admin/buttons.css';
 
 
 // * ---------------------------------------------------------BOOTSTRAP---------------------------------------------------------------
