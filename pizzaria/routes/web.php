@@ -35,3 +35,15 @@ Route::prefix('adm')->group(function () {
     //Rota que exclui uma bebida
     Route::delete('/bebidas/destroy/{id}', [BebidasAdmController::class, 'destroy'])->name('bebidas_adm.destroy'); 
 });
+
+//----------------------------------------------ROTAS DE ADMINISTRAÇÃO DE PIZZAS---------------------------------------------------------------
+Route::prefix('adm')->group(function () {
+    // Rota que exibe a lista das pizzas
+    Route::get('/pizzas', [PizzasAdmController::class, 'index'])->name('pizzas_adm.index');
+    // Rota para adicionar uma nova pizza
+    Route::post('/pizzas/store', [PizzasAdmController::class, 'store'])->name('pizzas_adm.store');
+    // Rota que atualiza uma pizza
+    Route::put('/pizzas/update/{id}', [PizzasAdmController::class, 'update'])->name('pizzas_adm.update');
+    // Rota que exclui uma pizza
+    Route::delete('/pizzas/destroy/{id}', [PizzasAdmController::class, 'destroy'])->name('pizzas_adm.destroy');
+});
