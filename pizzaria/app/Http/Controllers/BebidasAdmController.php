@@ -12,7 +12,7 @@ class BebidasAdmController extends Controller
     public function index()
     {
         $bebidas = Bebida::all();
-        return view('pizzaria_admin.bebidas_adm.bebidas', compact('bebidas'));
+        return view('pizzaria_admin.bebidas', compact('bebidas'));
     }//Fim do Index
 
     //STORE: Armazena uma nova bebida
@@ -44,7 +44,7 @@ class BebidasAdmController extends Controller
             'imagem_bebida' => $path,
         ]);
 
-        return redirect('/adm/bebidas')->with('success', 'Bebida adicionada com sucesso!');
+        return redirect('/admin/bebidas')->with('success', 'Bebida adicionada com sucesso!');
     }//Fim do Store
 
     //UPDATE: Atualiza os dados de uma bebida existente.
@@ -85,7 +85,7 @@ class BebidasAdmController extends Controller
             'imagem_bebida' => $path,
         ]);
 
-        return redirect('/adm/bebidas')->with('success', 'Bebida adicionada com sucesso!');
+        return redirect('/admin/bebidas')->with('success', 'Bebida adicionada com sucesso!');
     }
 
     //DESTROY: Remove uma bebida
@@ -101,6 +101,6 @@ class BebidasAdmController extends Controller
         // Exclui a bebida do banco de dados
         $bebida->delete();
 
-        return redirect('/adm/bebidas')->with('success', 'Bebida adicionada com sucesso!');
+        return redirect('/admin/bebidas')->with('success', 'Bebida adicionada com sucesso!');
     }//Fim do Destroy
 }

@@ -11,7 +11,7 @@ class PizzasAdmController extends Controller
     public function index()
     {
         $pizzas = Pizza::all(); // Obtém todas as pizzas do banco
-        return view('pizzaria_admin.pizzas_adm.pizzas', compact('pizzas'));
+        return view('pizzaria_admin.pizzas', compact('pizzas'));
     }
 
 
@@ -51,7 +51,7 @@ class PizzasAdmController extends Controller
         // Salvar os dados no banco
         $pizza->save();
     
-        return redirect()->route('pizzas_adm.index')->with('success', 'Pizza adicionada com sucesso!');
+        return redirect()->route('pizzas.index')->with('success', 'Pizza adicionada com sucesso!');
     }
     
     
@@ -98,7 +98,7 @@ public function update(Request $request, $id)
     // Salvar as alterações no banco de dados
     $pizza->save();
 
-    return redirect()->route('pizzas_adm.index')->with('success', 'Pizza atualizada com sucesso!');
+    return redirect()->route('pizzas.index')->with('success', 'Pizza atualizada com sucesso!');
 }
 
 
@@ -116,8 +116,9 @@ public function update(Request $request, $id)
         // Exclui a pizza do banco de dados
         $pizza->delete();
     
-        return redirect()->route('pizzas_adm.index')->with('success', 'Pizza removida com sucesso!');
+        return redirect()->route('pizzas.index')->with('success', 'Pizza removida com sucesso!');
     }
+    
     
     
     

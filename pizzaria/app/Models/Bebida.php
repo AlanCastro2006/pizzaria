@@ -15,9 +15,4 @@ class Bebida extends Model
         'imagem_bebida'
     ];
 
-    // Relacionamento com Itens do Pedido (1:N)
-    public function itensPedido()
-    {
-        return $this->hasMany(PedidoItem::class, 'bebida_id');
-    }
 }

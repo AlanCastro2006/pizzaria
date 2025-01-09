@@ -36,7 +36,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             // Redireciona para a home (ou outro local)
-            return redirect()->intended('/adm/buttons');
+            return redirect()->intended('/admin/buttons');
         }
 
         // Retorna erro se as credenciais forem inválidas

@@ -2,24 +2,6 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="light">
 
 <head>
-    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-    <title>Autoescola</title>
-
-    <link rel='stylesheet' id='screenr-style-css'
-        href='https://www.autoescolacaleffi.com.br/wp-content/themes/screenr/style.css?ver=6.6' type='text/css'
-        media='all' />
-    <script type="text/javascript"
-        src="https://www.autoescolacaleffi.com.br/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
-        id="jquery-core-js"></script>
-    <script type="text/javascript"
-        src="https://www.autoescolacaleffi.com.br/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"
-        id="jquery-migrate-js"></script>
-    <!-- -------------------------------------------------------------------------------------------------------------------------------------- -->
-
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-    
-
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -222,39 +204,11 @@
         </div>
     </footer>
 
-    
-
-    {{-- * Botão de Back to Top (voltar ao topo) --}}
-    <button id="backToTop" class="back-to-top-btn d-flex align-items-center" title="Voltar ao topo">
-        <span class="iconamoon--arrow-up-2"></span>
-    </button>
-
     {{-- JS Bootstrap --}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
-    <script type="text/javascript"
-        src="https://www.autoescolacaleffi.com.br/wp-content/themes/screenr/assets/js/plugins.js?ver=4.0.0"
-        id="screenr-plugin-js"></script>
 
-    <script type="text/javascript" id="screenr-theme-js-extra">
-        /* <![CDATA[ */
-        var Screenr = {
-            "ajax_url": "https:\/\/www.autoescolacaleffi.com.br\/wp-admin\/admin-ajax.php",
-            "full_screen_slider": "1",
-            "header_layout": "transparent",
-            "slider_parallax": "1",
-            "is_home_front_page": "1",
-            "autoplay": "7000",
-            "speed": "700",
-            "effect": "slide",
-            "gallery_enable": "1"
-        };
-        /* ]]> */
-    </script>
-    <script type="text/javascript"
-        src="https://www.autoescolacaleffi.com.br/wp-content/themes/screenr/assets/js/theme.js?ver=20120206"
-        id="screenr-theme-js"></script>
 </body>
 
 </html>

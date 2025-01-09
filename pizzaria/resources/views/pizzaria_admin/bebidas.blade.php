@@ -10,7 +10,7 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav d-flex justify-content-end flex-grow-1">
         <li class="nav-item">
-            <a class="nav-link roboto-regular" id="admin-indicator" aria-current="page" href="/adm/buttons">Modo Administrador</a>
+            <a class="nav-link roboto-regular" id="admin-indicator" aria-current="page" href="/admin/buttons">Modo Administrador</a>
         </li>
         <li class="nav-item">
             {{-- Botão de Logout --}}

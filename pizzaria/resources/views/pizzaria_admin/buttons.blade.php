@@ -10,7 +10,7 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav d-flex justify-content-end flex-grow-1">
         <li class="nav-item">
-            <a class="nav-link roboto-regular" id="admin-indicator" aria-current="page" href="/admin/cards">Modo Administrador</a>
+            <a class="nav-link roboto-regular" id="admin-indicator" aria-current="page" href="/admin/buttons">Modo Administrador</a>
         </li>
         <li class="nav-item">
             {{-- Botão de Logout --}}
@@ -38,17 +38,17 @@
                     {{-- Grade flexível para os botões com imagens --}}
                     <div class="d-flex flex-wrap justify-content-center gap-4">
                         {{-- Botão para Bebidas --}}
-                        <a href="/adm/bebidas" class="admin-btn">
+                        <a href="/admin/bebidas" class="admin-btn">
                             <img src="{{ Vite::asset('resources/img/buttons/bebidas.jpg') }}" alt="Bebidas" class="btn-icon">
                             <span class="btn-label">Bebidas</span>
                         </a>
                         {{-- Botão para Pizzas --}}
-                        <a href="/adm/pizzas" class="admin-btn">
+                        <a href="/admin/pizzas" class="admin-btn">
                             <img src="/img/buttons/pizzas.png" alt="Pizzas" class="btn-icon">
                             <span class="btn-label">Pizzas</span>
                         </a>
                         {{-- Botão para Promoções --}}
-                        <a href="/adm/promocoes" class="admin-btn">
+                        <a href="/admin/promocoes" class="admin-btn">
                             <img src="/img/icons/promocoes.png" alt="Promoções" class="btn-icon">
                             <span class="btn-label">Promoções</span>
                         </a>
